@@ -1,0 +1,9 @@
+CPU의 구성요소들
+Control Unit : 명령어를 해석하고 다른 장치에게 동작 지시
+ALU : 덧셈, 뺄셈 등의 연산을 함
+Registers : 명령어를 실행하는 동안 필요한 정보 저장
+-Address Register(AR) : 읽거나 쓸 메모리 주소 저장
+-Program Counter(PC) : 다음 명령어의 메모리 주소 저장
+-Data Register(DR) : 메모리에서 읽어온 데이터 저장
+-Instruction Register(IR) : 메모리에서 읽어온 명령어 저장
+-Accumullator(ACC) : 연산에 사용되는 데이터 저장
