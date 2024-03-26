@@ -1,0 +1,22 @@
+expression(수식) : 하나의 값을 가지는 statement ex) 1+2+3
+statement(문) : 실행 가능한 최소의 독립적인 코드 조각 ex) x=3
+
+arithmetic operators(산술연산자) : + - * / //(몫) % **
+asignment operators(대입연산자) : =, 복합대입연산자 : += -= *= /= //= %= **=
+comparison operators(비교연산자) : ==(같다) !=(같지않다) > < >= <=
+logical operators(논리연산자) : and, or, not
+identity operators(식별연산자) : is, is, not
+membership operators(멤버연산자 : 리터럴이 묶인 데이터타입에 포함되어 있는지) : in not in
+Bitwise operators (비트연산자 : 비트 단위의 연산 수행) &(and) |(or) ^(xor) ~(not)
+
+[할당연산자]
+num1 = num2 = num3 = 200 같이 다중할당 가능
+num4, num5 = 300, 400 //동시 할당
+
+[논리연산자]
+Number : 0만 False, 나머지는 True
+String : ''만 False, 나머지는 True
+list : []만 False, 나머지는 True
+
+[주석]
+#, """ ~ """
