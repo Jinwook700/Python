@@ -1,0 +1,20 @@
+#리스트, 튜플과 달리 순차적 요솟값이 아닌 key, value를 사용함
+#{}를 사용한다
+dic1 = {'key1' : 'apple', 'key2' : 'banana', 'key3' : 'pineapple'}
+dic1['key4'] = 'peach' #요소 추가하기
+{'key1': 'apple', 'key2': 'banana', 'key3': 'pineapple', 'key4': 'peach'}
+
+#key리스트 만들기
+dic1.keys()
+dict_keys(['key1', 'key2', 'key3', 'key4'])
+
+#value 리스트 만들기
+dic1.values()
+dict_values(['apple', 'banana', 'pineapple', 'peach'])
+
+#key, value 쌍 얻기
+dic1.items()
+dict_items([('key1', 'apple'), ('key2', 'banana'), ('key3', 'pineapple'), ('key4', 'peach')])
+
+dic1.get('key1') #key로 value 얻기
+'apple'
