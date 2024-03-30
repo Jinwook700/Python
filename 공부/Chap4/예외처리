@@ -1,0 +1,29 @@
+try:
+    4 / 0
+except ZeroDivisionError as e:
+    print(e)
+division by zero
+
+4/0
+---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+Cell In[2], line 1
+----> 1 4/0
+
+ZeroDivisionError: division by zero
+
+#try/ finally 문
+#try/ except 문
+#try/ except/ else 문
+# try_else.py
+try:
+    age=int(input('나이를 입력하세요: '))
+except:
+    print('입력이 정확하지 않습니다.')
+else:
+    if age <= 18:
+        print('미성년자는 출입금지입니다.')
+    else:
+        print('환영합니다.')
+나이를 입력하세요: 13
+미성년자는 출입금지입니다
