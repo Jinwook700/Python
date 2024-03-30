@@ -1,0 +1,74 @@
+#클래스 만들기
+class FourCal:
+    pass #아무것도 수행하지 않는, 임시코드용으로 사용함
+
+a = FourCal()
+type(a)
+__main__.FourCal
+
+class FourCal:
+    def setdata(self, first, second): #클래스안에 구현된 함수는 메서드(method)
+        self.first = first
+        self.second = second
+a = FourCal()
+a.setdata(4, 2)
+a.first
+4
+
+class FourCal:
+    def setdata(self, first, second):
+        self.first = first
+        self.second = second
+    def add(self):
+        result = self.first + self.second
+        return result
+a = FourCal()
+a.setdata(4, 2)
+a.add()
+6
+
+class FourCal:
+    def __init__(self, first, second): #초기화??
+        self.first = first
+        self.second = second
+    def setdata(self, first, second):
+        self.first = first
+        self.second = second
+    def add(self):
+        result = self.first + self.second
+        return result
+    def mul(self):
+        result = self.first * self.second
+        return result
+    def div(self):
+        result = self.first / self.second
+        return result
+a = FourCal(4, 2)
+a.mul()
+8
+
+#클래스의상속
+class MoreFourCal(FourCal):
+    pass
+a = MoreFourCal(4, 2)
+a.add()
+6
+
+class SafeFourCal(FourCal): #매서드 오버로딩
+    def div(self):
+        if self.second == 0:
+            return 0
+        else:
+            return self.first / self.second
+a = SafeFourCal(4, 0)
+a.div()
+0
+
+class Family:
+    lastname = "강"
+Family.lastname
+'강'
+
+a = Family()
+a.lastname
+'강'
