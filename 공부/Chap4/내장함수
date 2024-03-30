@@ -1,0 +1,110 @@
+#abs 절댓값 리턴
+abs(-5)
+5
+
+#all 참이면 true
+all([3])
+True
+
+#any 반복중 하나라도 참이면 true
+any([3, ""])
+True
+
+#chr 유니코드 숫자 값을 받아 입력
+chr(98)
+'b'
+
+#dir 변수나 함수 보여준대
+dir([1, 2, 3])
+['__add__',
+ '__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__getstate__',
+ '__gt__',
+ '__hash__',
+ '__iadd__',
+ '__imul__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__mul__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__reversed__',
+ '__rmul__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'append',
+ 'clear',
+ 'copy',
+ 'count',
+ 'extend',
+ 'index',
+ 'insert',
+ 'pop',
+ 'remove',
+ 'reverse',
+ 'sort']
+
+#divmod 몫과 나머지 튜플로 리턴
+divmod(7, 3)
+(2, 1)
+
+#enumerate 순서가있는 데이터 입력받아, 인덱스 값 포함하여 리턴
+for i, name in enumerate(['body', 'foo', 'bar']):
+        print(i, name)
+0 body
+1 foo
+2 bar
+
+#eval 해당 문자열을 실행한 결괏값을 리턴
+eval('1+6')
+7
+
+#filter 리턴값이 참인것만 걸러서 리턴
+#hex 정수를 받아 16진수 문자열로 리턴
+hex(123)
+'0x7b'
+
+#id 고유 주솟값 리턴
+a = 9
+id(9)
+140736073012264
+
+id(a)
+140736073012264
+
+#max 최댓값 리턴 <-> min 은 최솟값
+max([1, 5 ,3 ,6 ,3])
+6
+
+#oct 정수를 8진수 문자로
+oct(34)
+'0o42'
+
+#pow 제곱값
+pow(3, 6)
+729
+
+#range 짱좋은거, 끝숫자는 해당범위 포함 x
+list(range(1, 10, 3))
+[1, 4, 7]
