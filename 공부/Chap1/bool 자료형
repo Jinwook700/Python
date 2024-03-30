@@ -1,0 +1,19 @@
+#bool 자료형이란 true, false를 나타내는 자료형이다
+#비어있으면 거짓이 된다
+
+a = True
+b = False
+type(a)
+bool
+
+1 == 1 #같은가?
+True
+
+1 < 2
+True
+
+bool("Hello world")
+True
+
+bool("")
+False
