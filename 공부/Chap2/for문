@@ -1,0 +1,43 @@
+#for문에도 continue 적용 가능
+test_list = ['one', 'two', 'three']
+for i in test_list :
+    print(i)
+one
+two
+three
+
+score = [30 ,70, 45, 90, 75]
+number = 0
+for mark in score:
+    number += 1
+    if mark >= 60:
+        print("%d번 학생은 합격입니다." %number)
+    else :
+        print("%d번 학생은 불합격입니다." %number)
+1번 학생은 불합격입니다.
+2번 학생은 합격입니다.
+3번 학생은 불합격입니다.
+4번 학생은 합격입니다.
+5번 학생은 합격입니다.
+
+a = range(10)
+range(0, 10)
+a = range(8,15)
+range(8, 15)
+sum = 0
+for i in a:
+    sum += i
+    print(sum)
+    
+8
+17
+27
+38
+50
+63
+77
+
+a = [1, 2, 3, 4, 5]
+result = [num*3 for num in a] #리스트 컴프리헨션
+print(result) 
+[3, 6, 9, 12, 15]
