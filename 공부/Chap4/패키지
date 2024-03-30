@@ -1,0 +1,3 @@
+import game.echo
+game.echo.echo_test()
+echo
