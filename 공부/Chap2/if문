@@ -1,1 +1,40 @@
-.
+#비교 연산자
+x=3
+y=4
+x<y
+x>y
+x >= y
+x <= y
+x == y #x,y가 같다
+x != y #x,y가 같지 않다
+​
+x or y #x와 y 둘 중 하나만 참이어도 참
+x and y #x와 y 모두 참이어야 함
+not x # x가 거짓이면 참이다
+False
+
+1 in [1,2,3]
+True
+
+1 not in [1,2,3]
+False
+
+#example
+x = 30
+y = 40
+if x > y :
+    print("x>y")
+elif x < y :
+    print("x<y")
+else :
+    print("x=y")
+x<y
+
+#example
+a, b = map(int,input().split())
+if (a > b) :
+    print(">")
+elif (a < b) :
+    print("<")
+else :
+    print("=")
