@@ -1,0 +1,35 @@
+def add(a, b):
+    return a + b
+a = 3
+b = 4
+c = add(a,b)
+print(c)
+7
+
+def say(): #입력값이 없는 함수
+    return 'Hi'
+a = say()
+print(a)
+Hi
+
+def add(a, b): #리턴값이 없는 함수
+    print("%d, %d의 합은 %d입니다" % (a , b , a+b))
+c = add(1, 2)
+1, 2의 합은 3입니다
+
+def add_many(*args): #*붙이면 입력값을 전부 모아 튜플로 만들어줌
+    result = 0
+    for i in args:
+        result = result + i #*args에 입력받은 모든 값을 더한다
+    return result
+result = add_many(1, 2, 3 ,4)
+print(result)
+10
+
+def print_kwargs(**kwargs): #키워드 매개변수
+    print(kwargs)
+print_kwargs(a=1) #딕셔너리가 됨
+{'a': 1}
+
+print_kwargs(name = 'foo', age = 3)
+{'name': 'foo', 'age': 3}
