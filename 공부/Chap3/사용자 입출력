@@ -1,0 +1,13 @@
+number = input("숫자를 입력하세요 : ") #input은 입력되는 모든 것을 문자열로 취급
+숫자를 입력하세요 : 3
+
+number = input("숫자를 입력하세요 : ")
+print(number)
+숫자를 입력하세요 : 5
+5
+
+print("a""b""c""d") #""는 + 연산과 동일함
+abcd
+
+print("a","b","c") #, 는 띄어쓰기
+a b c
