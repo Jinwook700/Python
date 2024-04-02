@@ -1,0 +1,32 @@
+조건문(conditional statement) : if문
+반복문(repetitive statement) : for문, while문
+
+if 조건식 :
+  문장1
+  문장2
+elif 조건식2 :
+  문장3
+else :
+  문장4
+
+for 변수 in range([시작값], 끝값+1, [증가값]):
+  문장1
+  문장2
+
+for 변수 int 묶인 데이터 타입:
+  문장1
+  문장2
+
+while 조건식:
+  문장1
+  문장2
+
+break문 : 반복문 강제 빠져나오기
+continue : 반복문의 조건식으로 돌아가기
+
+if (a%2 == 0) and(or) (b%2 == 0):
+  print('모두 짝수임')
+
+[formatting]
+num = 27
+print(f'number: {num:.2f})
