@@ -1,0 +1,157 @@
+[001]
+세 점이 주어졌을 때, 축에 평행한 직사각형을 만들기 위해서 
+필요한 네번째 점을 찾는 프로그램을 작성하시오.
+※ 백준 3009번 (https://www.acmicpc.net/problem/3009) 와 동일한 문제
+
+Input
+세 점의 좌표가 한 줄에 하나씩 주어진다. 좌표는 1보다 크거나 같고, 1000보다 작거나 같은 정수이다.
+
+Output
+직사각형의 네 번째 점의 좌표를 출력한다.
+
+[Code]
+a, b = map(int,input().split())
+c, d = map(int,input().split())
+e, f = map(int,input().split())
+g, h = 0, 0
+
+if a == c :
+    g = e
+elif a == e :
+    g = c
+else :
+    g = a
+if b == d :
+    h = f
+elif b == f :
+    h = d
+else :
+    h = b
+print(g,h)
+
+
+[002]
+상근이는 세계적인 소프트웨어 회사 기글에서 일한다. 
+이 회사의 가장 큰 특징은 자유로운 출퇴근 시간이다. 
+따라서, 직원들은 반드시 9시부터 6시까지 회사에 있지 않아도 된다.
+각 직원은 자기가 원할 때 출근할 수 있고, 아무때나 퇴근할 수 있다.
+상근이는 모든 사람의 출입카드 시스템의 로그를 가지고 있다.
+이 로그는 어떤 사람이 회사에 들어왔는지, 나갔는지가 기록되어져 있다. 
+로그가 주어졌을 때, 현재 회사에 있는 모든 사람을 구하는 프로그램을 작성하시오.
+
+※ 백준 7785번 (https://www.acmicpc.net/problem/7785) 와 동일한 문제
+
+Input
+첫째 줄에 로그에 기록된 출입 기록의 수 n이 주어진다. 
+(2 ≤ n ≤ 106) 다음 n개의 줄에는 출입 기록이 순서대로 주어지며,
+각 사람의 이름이 주어지고 "enter"나 "leave"가 주어진다.
+"enter"인 경우는 출근, "leave"인 경우는 퇴근이다.
+
+회사에는 동명이인이 없으며, 대소문자가 다른 경우에는 다른 이름이다.
+사람들의 이름은 알파벳 대소문자로 구성된 5글자 이하의 문자열이다.
+
+Output
+현재 회사에 있는 사람의 이름을 사전 순의 역순으로 한 줄에 한 명씩 출력한다.
+
+[Code]
+N = int(input())
+A = list()
+
+for i in range(1,N+1):
+    name, state = input().split()
+    if state == "enter" :
+        A.append(name)
+    elif state == "leave" :
+        A.remove(name)
+A.sort(reverse = True)
+for j in A:
+    print(j)
+    
+
+[003]
+알파벳 소문자로만 이루어진 단어가 주어진다. 
+이때, 이 단어가 팰린드롬인지 아닌지 확인하는 프로그램을 작성하시오.
+팰린드롬이란 앞으로 읽을 때와 거꾸로 읽을 때 똑같은 단어를 말한다.
+level, noon은 팰린드롬이고, baekjoon, online, judge는 팰린드롬이 아니다.
+
+※ 백준 10988번 (https://www.acmicpc.net/problem/10988) 와 동일한 문제
+
+Input
+첫째 줄에 단어가 주어진다. 단어의 길이는 1보다 크거나 같고, 100보다 작거나 같으며, 
+알파벳 소문자로만 이루어져 있다.
+
+Output
+첫째 줄에 팰린드롬이면 1, 아니면 0을 출력한다.
+
+[Code]
+pell = input()
+pell_size = len(pell)
+pellpell = len(pell)
+if pell_size%2 == 1:
+    pell_size -= 1
+count = 0
+for i in range(1,pell_size//2 + 1):
+    if pell[i] != pell[pellpell - i -1]:
+        count += 1
+if count > 0:
+    print(0)
+else :
+    print(1)
+
+
+[004]
+X대학 M교수님은 프로그래밍 수업을 맡고 있다. 
+교실엔 학생이 30명이 있는데, 학생 명부엔 각 학생별로 1번부터 30번까지 출석번호가 붙어 있다.
+교수님이 내준 특별과제를 28명이 제출했는데, 
+그 중에서 제출 안 한 학생 2명의 출석번호를 구하는 프로그램을 작성하시오.
+
+※ 백준 5597번 (https://www.acmicpc.net/problem/5597) 와 동일한 문제
+
+Input
+입력은 총 28줄로 각 제출자(학생)의 출석번호 n(1 ≤ n ≤ 30)가 한 줄에 하나씩 주어진다.
+출석번호에 중복은 없다.
+
+Output
+출력은 2줄이다. 1번째 줄엔 제출하지 않은 학생의 출석번호 중 가장 작은 것을 출력하고, 
+2번째 줄에선 그 다음 출석번호를 출력한다.
+
+[Code]
+A = list(range(1,31))
+
+for i in range(1,29):
+    N = int(input())
+    A.remove(N)
+
+for j in range(1,3):
+    print(A[j-1])
+
+
+[005]
+두 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다.
+예를 들어, 7, 14, 27, 38을 3으로 나눈 나머지는 1, 2, 0, 2이다.
+수 10개를 입력받은 뒤, 이를 42로 나눈 나머지를 구한다. 
+그 다음 서로 다른 값이 몇 개 있는지 출력하는 프로그램을 작성하시오.
+
+※ 백준 3052번 (https://www.acmicpc.net/problem/3052) 와 동일한 문제
+
+Input
+첫째 줄부터 열번째 줄 까지 숫자가 한 줄에 하나씩 주어진다.
+이 숫자는 1,000보다 작거나 같고, 음이 아닌 정수이다.
+
+Output
+첫째 줄에, 42로 나누었을 때, 서로 다른 나머지가 몇 개 있는지 출력한다.
+
+[Code]
+A = list()
+for j in range(1,11):
+    N = int(input())
+    A.append(N)
+    
+B = set()
+
+for i in A:
+    B.add(i%42)
+print(len(B))
+
+
+
