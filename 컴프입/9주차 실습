@@ -1,0 +1,232 @@
+[001]
+Description
+정수 num이 주어졌을 때, 결과값이 한 자리 숫자로 나올 때까지 정수의 각 자릿수를 반복적으로 더하고, 
+그 결과를 출력하는 프로그램을 작성하세요.
+#입력받은 숫자(num)의 각 자리수를 반복적으로 더한 값(result)을 출력하는 함수를 작성하고, 
+이 함수를 사용하여 프로그램을 작성하세요.
+
+def iter_sum(num):
+        #함수를 완성하세요.
+        return result
+        
+Input
+첫째 줄에num이 입력되며num은 100,000보다 작은 양의 정수이다.
+
+Output
+정수 num의 각 자릿수를 반복적으로 더하여 만들어낸 한 자리 숫자를 결과값으로 출력하세요.
+
+[Code]
+def iter_sum(num):
+    num1 = str(num)
+    result = 0
+    while(True):
+        result = 0
+        for i in range(len(num1)):
+            result += int(num1[i])
+        if (result < 10):
+            return result
+        else:
+            num1 = str(result)
+    
+
+num = int(input())
+print(iter_sum(num))
+
+
+[002]
+Description
+철민이는 중간고사 준비를 위해 총 N일간의 계획을 세웠다. 철민이가 듣는 과목은 미적분학1 그리고 일반물리학1이다. 
+미적분학은 모두 A개의 문제, 일반물리학1은 B개의 문제를 풀어야 한다. 
+철민이는 하루에 미적분학1을 C 문제, 일반물리학은 D문제 풀 수 있다.
+철민이가 중간고사 준비기간 동안 스트레스 해소를 위해 마음 편히 술을 마실 수 있는 최대 날의 수를 구하는 
+python코드를 프로그래밍하라.
+
+#과목의 문제 수(a)와 철민이가 하루에 해당 과목을 풀 수 있는 수(b)를 입력받아
+해당과목을 푸는데 걸리는 날의 수(result)를 출력하는함수를 작성하고, 이 함수를 사용하여 프로그램을 작성하세요.
+
+def caculate_days(a,b):
+        #함수를 완성하세요.
+        return result
+
+Input
+한 줄에 하나씩 총 N, A, B, C, D가 주어진다. (2 ≤ N ≤ 40, 1 ≤ A, B ≤ 1000, 1 ≤ C, D ≤ 100)
+시험 준비 기간 내에 다 할 수 있는 경우만 입력으로 주어진다.
+
+Output
+첫째 줄에 철민이가 술을 마실 수 있는 최댓값을 출력한다.
+
+[Code]
+def calculate_days(a,b):
+    result = a//b
+    if (a%b != 0):
+        result += 1
+    return result
+    
+N = int(input())
+A = int(input())
+B = int(input())
+C = int(input())
+D = int(input())
+
+print(N-max(calculate_days(A,C), calculate_days(B,D)))
+
+
+[003]
+Description
+계산의 편의성을 위해 조금 다른 연산자 @, %, #을 사용하려고 한다.
+@는 3을 곱하고, %는 5를 더하며, #는 7을 빼는 연산자이다.
+따라서, 수학 식의 가장 앞에 수가 하나 있고, 그 다음에는 연산자가 있다.
+이 방식을 이용하여 계산하는 프로그램을 작성하시오.
+
+#각 연산자에 대한 함수를 작성하고, 해당 함수들을 사용하여 프로그램을 작성하세요.
+
+# '@' 연산
+def at(m):
+        #함수를 완성하세요.
+        return m
+
+# '%' 연산
+def per(m):
+        #함수를 완성하세요.
+        return m
+
+# '#' 연산
+def hash(m):
+        #함수를 완성하세요.
+        return m
+
+Input
+첫째 줄에 테스트 케이스의 개수 T가 주어진다.
+다음 줄에는 이상한 연산자를 이용한 식이 한 줄에 하나씩 주어진다.
+입력으로 주어지는 수는 정수이거나 소수 첫째 자리까지 주어지며, 0 이상 100 이하이다. 연산자는 최대 1개 주어진다.
+
+Output
+각 테스트 케이스에 대해서, 이상한 연산자 연산을 한 후 그 결과값을 소수점 둘째 자리까지 출력한다.
+
+[Code]
+def at(m) :
+    result = m*3
+    return result
+    
+def per(m) :
+    result = m + 5
+    return result
+    
+def hash(m) :
+    result = m - 7
+    return result
+
+T = int(input())
+
+for i in range(T):
+    n, oper = map(str,input().split())
+    n = float(n)
+    if (oper == "@") :
+        result_1 = at(n) 
+        print("{:.2f}".format(result_1))
+    elif (oper == "%") :
+        result_2 = per(n)
+        print("{:.2f}".format(result_2))
+    elif (oper == "#") :
+        result_3 = hash(n)
+        print("{:.2f}".format(result_3))
+
+
+[004]
+Description
+공대 3학년인 인제는 총학생회 활동과 전공 텀프로젝트 등으로 바쁜 일정으로 인해 수면 시간이 불규칙하다.
+그래서 인제는 침대에 누우면 잠을 자는 것이고, 느낌 상 깨면 일어난다.
+인제의 깨진 바이오 리듬을 다시 회복해주기 위해 인제가 잠을 자는 시간을 구하는 함수를 만들어 알려주자!
+
+#[1]시간(hms)을 초(n)로 환산하는 함수를 작성하고, 이 함수를 사용하여 프로그램을 작성하세요.
+
+def to_second(hms):
+        #함수를 완성하세요.
+        return n
+
+#[2]수면 시작 시간(cu)과 기상 시간(th)을 입력 받아 두 시간의 차이(ans)를 계산하는 함수를 작성하고, 
+이 함수를 사용하여 프로그램을 작성하세요.
+
+def diff(cu, th):
+        n = to_second(cu)# 수면 시작 시간을 초로 환산
+        m = to_second(th)# 기상 시간 초로 환산
+        # 두 시간 차이
+        #함수를 완성하세요.
+        return ans
+
+#[3]초(sec)를 입력받아, 출력 양식에 맞게(시간, 분, 초 - H, M, sec) 출력하는 함수를 작성하고, 
+이 함수를 사용하여 프로그램을 작성하세요.
+
+def print_time(sec):
+        #함수를 완성하세요.
+        print("{0:02d}:{1:02d}:{2:02d}".format(H, M, sec))
+
+Input
+첫째 줄에 인제가 잠을 자기 시작한 시각 hh:mm:ss로 주어진다.
+두 번째 줄에 인제가 깨는 시간 hh:mm:ss이 주어진다.
+시간, 분, 그리고 초의 범위는 각 0≤h≤23, 0≤m≤59, 0≤s≤59이다.
+
+Output
+인제의 잠을 잔 시간이 hh:mm:ss로 주어진다.
+이 시간은 1초 보다 크거나 같고, 24시간보다 작거나 같다.
+(즉, 출력이 00:00:00초는 될 수 없다.)
+
+[Code]
+def to_second(hms):
+    n = int(hms[0])*60*60 + int(hms[1])*60 + int(hms[2])
+    return n
+    
+def diff(cu, th):
+    
+    n = to_second(cu)
+    
+    m = to_second(th)
+    
+    ans = m-n
+    if(ans <= 0):
+        ans += 24*3600
+    
+    return ans
+    
+def print_time(sec):
+    H = sec//3600
+    M = (sec-H*3600)//60
+    sec = sec-H*3600 - M*60
+    print("{0:02d}:{1:02d}:{2:02d}".format(H, M, sec))
+    
+A = input().split(":")
+B = input().split(":")
+hi = diff(A, B)
+print_time(hi)
+
+
+[005]
+Description
+0보다 크거나 같은 정수가 입력될 때,N!을 출력하시오.
+* 팩토리얼(factorial) 이란 그 수보다 작거나 같은 모든 양의 정수의 곱이다.
+기호는 !을 쓰며 팩토리얼 이라고 읽는다.
+
+#팩토리얼 함수를 재귀함수를 이용해 작성하고, 이 함수를 사용하여 프로그램을 작성하세요.
+def factorial(n):
+        #함수를 완성하세요.
+        if n > 0 :
+                #함수를 완성하세요.
+        return result
+        
+Input
+첫째 줄에 정수 N(0 ≤ N ≤ 12)이 주어진다.
+
+Output
+첫째 줄에 N!을 출력한다.
+
+[Code]
+def factorial(n):
+    result = 1
+    if n > 0 :
+        result *= n*factorial(n-1)
+    else :
+        result = 1
+    return result
+    
+N = int(input())
+print(factorial(N))
