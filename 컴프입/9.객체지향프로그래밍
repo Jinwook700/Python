@@ -1,0 +1,11 @@
+class Box:
+    Pi = 3.14
+    def __init__(self, a, b): #생성자
+        self.__radius = a     #멤버 변수 (=인스턴스 변수)
+        self.__height = b
+    def Volume(self):         #멤버 메서드
+        lv = 2 * Box.Pi * self.__radius ** 2 * self.__height
+        return lv             #lv는 지역변수
+        
+q_box = Box(3, 2)
+print(q_box.Volume())
