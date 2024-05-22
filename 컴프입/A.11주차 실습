@@ -68,6 +68,70 @@ c3= C(0)
 c4= C(0)
 
 [Code]
+class Counter:
+    def __init__(self, number = 0): 
+        self.__number = number
+        if (self.__number >= 100 or self.__number <= -1):
+            self.__number = 0
+        #__number 속성값 지정하는 초기화메소드
+                #number의 디폴트 매개변수 값은 0
+          #number가 100이상이 되거나 -1이하가 되면 __number은 0을 초기값으로 가짐
+    def __str__(self):
+        return "C({})".format(self.__number)
+        #"C(number)"와 같이 출력하는 특수메소드
+    def __add__(self, other):
+        new_number = self.__number + other.__number
+        if (new_number >= 100) :
+            new_number = 0
+        return Counter(new_number)
+        #Counter 클래스의 인스턴스 c1, c2를 만들었을 때, c1 + c2 연산을 통해 c1의 __number와 c2의 __number의 합을 __number로 가지는 Counter 인스턴스를 반환하는 특수메소드
+            #이때, __number가 100 이상이 되면 0으로 초기화 됨
+    def __sub__(self, other):
+        new_number = self.__number - other.__number
+        if (new_number <= -1) :
+            new_number = 0
+        return Counter(new_number)
+        #Counter 클래스의 인스턴스 c1, c2를 만들었을 때, c1 - c2 연산을 통해 c1의 __number와 c2의 __number의 차를 __number로 가지는 Counter 인스턴스를 반환하는 특수메소드
+            #이때, __number가 -1 이하가 되면 0으로 초기화 됨
+    def reset(self):
+        self.__number = 0
+        #__number를 0으로 초기화하는 메소드
+    def inc(self):
+        self.__number += 1
+        if (self.__number >= 100):
+            self.__number = 0
+        #__number를 1 증가시키는 메소드
+            #__number가 100이상의 값이 되면 0으로 초기화 됨
+    def dec(self):
+        self.__number -= 1
+        if (self.__number <= -1):
+            self.__number = 0
+        #__number를 1 감소시키는 메소드
+            #__number가 -1이하의 값이 되면 0으로 초기화 됨
+            
+n1 = int(input()) #PNU OJ 입력
+
+c1 = Counter(n1)
+c1.inc()
+print('c1=',c1)
+
+c2 = Counter()
+c2.inc()
+c2.inc()
+c2.dec()
+print('c2=',c2)
+c2.reset()
+print('c2=',c2)
+
+n2 = int(input()) #PNU OJ 입력
+n3 = int(input()) #PNU OJ 입력
+
+c1 = Counter(n2)
+c2 = Counter(n3)
+c3 = c1 + c2
+c4 = c1 - c2
+print('c3=',c3)
+print('c4=',c4)
 
 
 [002]
