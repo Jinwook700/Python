@@ -188,6 +188,48 @@ name = '홍길동', account = '1234-0001', n1 = 2000, n2 = 500, n3 = 5000인 경
 계좌 잔고는 1500원으로 인출 요구 금액 5000보다 작습니다.
 
 [Code]
+class BankAccount:
+    def __init__(self, name, account, balance = 0):
+        self.__name = name
+        self.__account = account
+        self.__balance = balance
+     #속성값을 초기화 하는 메소드
+        #__name : 계좌 주인의 이름을 문자열 형으로 저장
+        #__account : 계좌 번호 "1234-5678"과 같은 문자열 형으로 저장
+        #__balance : 계좌의 잔액을 int 형으로 저장
+            #balance의 디폴트 매개변수 값은 0
+    def __str__(self):
+        return "{}의 계좌 {}의 잔고는 {}원 입니다.".format(self.__name, self.__account, self.__balance)
+     #"name의 계좌 account의 잔고는 balance원 입니다."와 같이 출력하는 특수메소드
+    def deposit(self, money):
+        self.__balance += money
+        print('{}원이 입금되었습니다. 잔고는 {}입니다.'.format(money, self.__balance))
+     #money 만큼의 돈을 balance에 추가하고 아래의 출력문을 출력하는 메소드
+        #출력문 : money원이 입금되었습니다. 잔고는 balance입니다.
+    def withdraw(self, money):
+        if (self.__balance < money):
+            print('계좌 잔고는 {}원으로 인출 요구 금액 {}보다 작습니다.'.format(self.__balance, money))
+        else :
+            self.__balance -= money
+            print('{}원이 출금되었습니다. 잔고는 {}입니다.'.format(money, self.__balance))
+     #money 만큼의 돈이 balance에서 빠져나가고 아래의 출력문을 출력하는 메소드
+        #출력문 : money원이 출금되었습니다. 잔고는 balance입니다.
+     #만일 balance가 money보다 작으면 돈이 빠져나가지 않고, 아래의 출력문을 출력하는 메소드
+        #출력문 : 계좌 잔고는 balance원으로 인출 요구 금액 money보다 작습니다.
+        
+name = input() #PNU OJ 입력
+account = input() #PNU OJ 입력
+n1 = int(input()) #PNU OJ 입력
+n2 = int(input()) #PNU OJ 입력
+n3 = int(input()) #PNU OJ 입력
+
+account1 = BankAccount(name,account)
+print(account1)
+account1.deposit(n1)
+print(account1)
+account1.withdraw(n2)
+print(account1)
+account1.withdraw(n3)
 
 
 [003]
@@ -249,6 +291,60 @@ name = '홍길동',student_id = '20200012',korean_quiz = 85,math_quiz = 90,scien
 합계: 270, 평균: 90.0
 
 [Code]
+class Student:
+    def __init__(self, name, student_id, korean_quiz = 0, math_quiz = 0, science_quiz = 0):
+        self.__name = name
+        self.__student_id = student_id
+        self.__korean_quiz = korean_quiz
+        self.__math_quiz = math_quiz
+        self.__science_quiz = science_quiz
+        #속성값을 초기화 하는 메소드
+        #__name : 학생의 이름을 문자열 형으로 저장
+        #__student_id : 학번 20200001과 같은 8자리 문자열 형으로 저장
+        #__korean_quiz : 학생의 국어 퀴즈 점수를 정수형으로 저장
+        #__math_quiz : 학생의 수학 퀴즈 점수를 정수형으로 저장
+        #__science_quiz : 학생의 과학 퀴즈 점수를 정수형으로 저장
+            #korean_quiz, math_quiz, science_quiz의 디폴트 매개변수 값은 0
+    def __str__(self):
+        total_score = self.get_total_score()
+        avg = self.get_avg_score()
+        return '이름: {}, 학번: {}\n국어성적: {}, 수학성적: {}, 과학성적: {}\n합계: {}, 평균: {}'.format(self.__name, self.__student_id, self.__korean_quiz, self.__math_quiz, self.__science_quiz, total_score, avg )
+     #여러줄에 걸친 아래의 출력문을 출력하는 특수메소드
+        #이름: name, 학번: student_id
+     #국어성적: korean_quiz, 수학성적: math_quiz, 과학성적: science_quiz의
+        #합계: total_score, 평균: avg_score
+    def set_korean_quiz(self, score):
+        self.__korean_quiz = score
+        #학생의 국어 퀴즈 점수를 설정하는 메소드
+    def set_math_quiz(self, score):
+        self.__math_quiz = score
+        #학생의 수학 퀴즈 점수를 설정하는 메소드
+    def set_science_quiz(self, score):
+        self.__science_quiz = score
+        #학생의 과학 퀴즈 점수를 설정하는 메소드
+    def get_total_score(self):
+        total_score = self.__science_quiz + self.__math_quiz + self.__korean_quiz
+        return total_score
+        #학생의 전체 퀴즈 점수의 합을 반환하는 메소드
+    def get_avg_score(self):
+        total_score = self.get_total_score()
+        avg = total_score/3
+        return avg
+        #학생의 퀴즈 점수의 평균을 반환하는 메소드
+        
+name = input() #PNU OJ 입력
+student_id = input() #PNU OJ 입력
+
+student = Student(name, student_id)
+
+korean_quiz = int(input()) #PNU OJ 입력
+math_quiz = int(input()) #PNU OJ 입력
+science_quiz = int(input()) #PNU OJ 입력
+
+student.set_korean_quiz(korean_quiz)
+student.set_math_quiz(math_quiz)
+student.set_science_quiz(science_quiz)
+print(student)
 
 
 [004]
@@ -338,3 +434,98 @@ TV가 꺼짐 상태입니다.
 볼륨 = 19, 채널 = 199
 
 [Code]
+class TV:
+    MIN_VOLUME = 0
+    MAX_VOLUME = 20
+    MIN_CHANNEL = 0
+    MAX_CHANNEL = 200
+    #아래의 클래스 변수를 가짐
+    #MIN_VOLUME : 볼륨의 최솟값으로 0이라는 상수
+    #MAX_VOLUME : 볼륨의 최댓값으로 20이라는 상수
+    #MIN_CHANNEL : 채널의 최솟값으로 0이라는 상수
+    #MAX_CHANNEL : 채널의 최댓값으로 200이라는 상수
+
+    def __init__(self, volume=5, channel=0, is_on=False):
+        self.__volume = volume
+        self.__channel = channel
+        self.__is_on = is_on
+        #속성값을 초기화하는 메소드
+        #__volume : 0에서 20까지의 볼륨 값을 가짐
+            #volume의 디폴트 매개변수 값은 5
+        #__channel : 0에서 200까지의 채널 값을 가짐
+            #channel의 디폴트 매개변수 값은 0
+        #__is_on : 켜짐 상태이면 True, 꺼짐 상태이면 False 값을 가짐
+            #is_on의 디폴트 매개변수 값은 False
+    def __str__(self):
+        if (not self.__is_on):
+            return 'TV가 꺼짐 상태입니다.'
+        else:
+            return '볼륨 = {}, 채널 = {}'.format(self.__volume, self.__channel)
+        #TV가 꺼짐 상태일 경우, "TV가 꺼짐 상태입니다." 를 출력하는 특수메소드
+        #TV가 켜짐 상태일 경우, "볼륨 = volume, 채널 = channel" 를 출력하는 특수메소드
+
+    def toggle_power(self):
+        if (self.__is_on):
+            self.__is_on = False
+        else:
+            self.__is_on = True
+        #TV가 꺼짐 상태일 경우 켜짐 상태로, 켜짐 상태일 경우 꺼짐 상태로 변환하는 메소드
+        
+    def set_channel(self, channel):
+        if (channel < TV.MIN_CHANNEL or channel > TV.MAX_CHANNEL):
+            print("채널 오류")
+        else:
+            self.__channel = channel
+        #채널을 설정하는 메소드
+        #이때, 채널의 값이 MIN_CHANNEL이상 MAX_CHANNEL이하의 값이 아닌 경우 "채널 오류"를 출력하는 메소드
+    def set_volume(self, volume):
+        if (volume < TV.MIN_VOLUME or volume > TV.MAX_VOLUME):
+            print("볼륨 오류")
+        else:
+            self.__volume = volume
+        #볼륨을 설정하는 메소드
+        #이때, 볼륨의 값이 MIN_VOLUME이상 MAX_VOLUME이하의 값이 아닌 경우 "볼륨 오류"를 출력하는 메소드
+
+    def volume_up(self):
+        if self.__volume < TV.MAX_VOLUME:
+            self.__volume += 1
+        #볼륨 값을 1 증가시키는 메소드로 최댓값은 MAX_VOLUME
+    def volume_down(self):
+        if self.__volume > TV.MIN_VOLUME:
+            self.__volume -= 1
+        #볼륨 값을 1 감소시키는 메소드로 최솟값은 MIN_VOLUME
+
+    def channel_up(self):
+        if self.__channel < TV.MAX_CHANNEL:
+            self.__channel += 1
+        #채널 값을 1 증가시키는 메소드로 최댓값은 MAX_CHANNEL
+    def channel_down(self):
+        if self.__channel > TV.MIN_CHANNEL:
+            self.__channel -= 1
+        #채널 값을 1 감소시키는 메소드로 최솟값은 MIN_CHANNEL
+        
+v1 = int(input()) #PNU OJ 입력
+c1= int(input()) #PNU OJ 입력
+
+my_tv = TV()
+print(my_tv)
+my_tv.toggle_power()
+print(my_tv)
+my_tv.set_volume(v1)
+print(my_tv)
+my_tv.set_channel(c1)
+print(my_tv)
+my_tv.volume_up()
+my_tv.channel_up()
+print(my_tv)
+
+v2= int(input()) #PNU OJ 입력
+c2= int(input()) #PNU OJ 입력
+
+your_tv = TV(v2,c2)
+print(your_tv)
+your_tv.toggle_power()
+print(your_tv)
+your_tv.volume_down()
+your_tv.channel_down()
+print(your_tv)
